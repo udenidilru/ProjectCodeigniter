@@ -26,17 +26,17 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 			<a href="" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
 
 			<ul class="dropdown-menu">
-				<?php 
-					 $user_id = $this->session->userdata('user_id');
+				<!-- <?php 
+					// $role_id = $this->session->userdata('role_id');
 				?>
-				<!--<?php// if($user_id == '1'): ?>-->
+				<?php// if($role_id == '1'): ?> -->
 				<li><?php echo anchor("admin/dashboard",'Dashboard');?></li>
 				<li><?php echo anchor("users/dashboard",'Users Dashboard');?></li>
 				<li><?php echo anchor("admin/coadmins",'View Co Admins');?></li>
 				<li><?php echo anchor("home_c/logout",'Logout');?></li>
-	<!--	<?php //else: ?>
-				<li><?php //echo anchor("home_c/logout",'Logout');?></li>
-			<?php //endif; ?>-->
+		<?php// else: ?>
+				<li><?php// echo anchor("home_c/logout",'Logout');?></li>
+			<?php //endif; ?>
 			</ul>
 		</div>
 	</div>

@@ -15,11 +15,14 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
 <h3>ADMIN DASHBOARD</h3>
 <?php $user_name = $this->session->userdata('user_name');?>
 <h5>Welcome <?php echo $user_name?></h5>
-
+<?php 
+					 $role_id = $this->session->userdata('role_id');
+				?>
+				<?php if($role_id == '1'): ?>
 <?php echo anchor("admin/addCollege" ,"ADD COLLEGE",['CLASS'=>"btn btn-primary"]); ?>
 <?php echo anchor("admin/addCoadmin" ,"ADD ADMIN/COADMIN",['CLASS'=>"btn btn-primary"]); ?>
 <?php echo anchor("admin/addStudent" ,"ADD STUDENT",['CLASS'=>"btn btn-primary"]); ?>
- 
+<?php endif; ?>
  <hr>
  <div class="row">
  	<table class="table table-hover">
@@ -39,7 +42,7 @@ defined('BASEPATH') OR exit('NO direct script access allowed');
  			<?php if(count($users)):?>
  		<?php foreach($users as $user):?>
  		<tr class="table-active">
- 			<td><?php echo $user->college_id?></td>
+ 			<td><?php echo $user->user_id?></td>
  			<td><?php echo $user->collegename?></td>
  			<td><?php echo $user->user_name?></td>
  			<td><?php echo $user->email?></td>

@@ -13,6 +13,7 @@
 				return $colleges->result();
 			}
 		}
+		
 
 		public function chkAdminExist(){
 			$chkAdmin = $this->db->where(['role_id' => '1'])->get('users');
@@ -46,6 +47,16 @@
 			return $users->result();
 			
 		}
+		public function viewAllCoadmins(){
+			$this->db->select(['users.user_id','users.email','college.college_id','users.user_name','users.gender','college.collegename','college.branch','roles.role_name']);
+			$this->db->from('college');
+			$this->db->join('users','users.college_id = college.college_id');
+			$this->db->join('roles','roles.role_id = users.role_id');
+			$this->db->where(['users.role_id' => '2']);
+			$users = $this->db->get();
+			return $users->result();
+			
+		}
 		public function insertStudent($data){
 			return $this->db->insert('students',$data);
 		}
@@ -71,7 +82,6 @@
 		public function removeStudent($id){
 			return $this->db->delete('students',['id' => $id]);
 		}
-		
 	}
 
 ?>

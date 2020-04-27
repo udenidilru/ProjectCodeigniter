@@ -137,7 +137,7 @@ class Admin extends CI_Controller {
 		
 		$this-> load ->view('header.php');
 		$this->load->model('query');
-		$coadmins = $this->query->viewAllColleges();
+		$coadmins = $this->query->viewAllCoadmins();
 		$this->load->view('viewCoadmins',['coadmins' => $coadmins]);
 		$this-> load ->view('footer.php');
 	}

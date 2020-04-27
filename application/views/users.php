@@ -22,7 +22,7 @@
  			<?php if(count($students)):?>
  		<?php foreach($students as $student):?>
  		<tr class="table-active">
- 			<td><?php echo $student->college_id?></td>
+ 			<td><?php echo $student->id?></td>
  			<td><?php echo $student->studentname?></td>
  			<td><?php echo $student->collegename?></td>
  			<td><?php echo $student->email?></td>

@@ -4,18 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home_c extends CI_Controller {
 
 	public function index(){
-		$this-> load ->view('header.php');
+		$this-> load ->view('footer.php');
 		$this->load->model('query');
 		$chkAdminExist = $this->query->chkAdminExist();
 		$this-> load ->view('home',['chkAdminExist' => $chkAdminExist]);
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 	}
 	public function adminRegister() {
 		$this-> load ->view('header.php');
 		$this->load->model('query');
 		$data['roles'] = $this->query->getRoles();
 		$this-> load ->view('register',$data);
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 	}
 	public function adminSignup(){
 		$this-> load ->view('header.php');
@@ -51,7 +51,7 @@ class Home_c extends CI_Controller {
 		if($this->session->userdata("user_id"))
 			return redirect("home_c/dashboard");
 		$this->load->view('login');
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 	}
 	public function signin(){
 		$this-> load ->view('header.php');

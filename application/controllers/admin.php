@@ -7,19 +7,19 @@ class Admin extends CI_Controller {
 		$this->load->model('query');
 		$users = $this->query->viewAllColleges();
 		$this->load->view('dashboard',['users' => $users]);
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 	}
 	public function addCollege(){
 		$this-> load ->view('header.php');
 		$this->load->view('addCollege');
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 	}
 	public function addStudent(){
 		$this-> load ->view('header.php');
 		$this->load->model('query');
 		$data['colleges'] = $this->query->getColleges();
 		$this->load->view('addStudent',$data);
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 	}
 	public function createCollege(){
 		$this-> load ->view('header.php');
@@ -47,7 +47,7 @@ class Admin extends CI_Controller {
 		$data['roles'] = $this->query->getRoles();
 		$data['colleges'] = $this->query->getColleges();
 		$this-> load ->view('addCoadmin',$data);
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 		
 	}
 
@@ -116,7 +116,7 @@ class Admin extends CI_Controller {
 		$this->load->model('query');
 		$data['students'] = $this->query->getStudents($college_id);
 		$this->load->view('viewStudents',$data);
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 	}
 
 	public function editStudent($id){
@@ -124,7 +124,7 @@ class Admin extends CI_Controller {
 		$this->load->model('query');
 		$data['studentData'] = $this->query->getStudentRecord($id);
 		$this->load->view('editStudent',$data);
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 	}
 
 	public function deleteStudent($id){
@@ -139,7 +139,7 @@ class Admin extends CI_Controller {
 		$this->load->model('query');
 		$coadmins = $this->query->viewAllCoadmins();
 		$this->load->view('viewCoadmins',['coadmins' => $coadmins]);
-		$this-> load ->view('footer.php');
+	//	$this-> load ->view('footer.php');
 	}
 
 	public function _construct(){
